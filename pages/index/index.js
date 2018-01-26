@@ -27,6 +27,13 @@ Page({
   },
   onLoad: function () {
     const ctx = wx.createCanvasContext('myCanvas');
+    var res = wx.getSystemInfoSync();
+    var width = res.windowWidth;
+    var height = res.windowHeight;
+    var ratio = 500 / width;
+    console.log(width)
+    console.log(height)
+    this.setData({ width: width, height: height })
     var self = this;
     var points = this.data.points;
     ctx.setLineJoin('round');
@@ -38,11 +45,11 @@ Page({
 
       if (!self.isEmptyObject(points[i].lines[j].e)) {
         ctx.beginPath();
-        ctx.moveTo(points[i].lines[j].s.x / 2, points[i].lines[j].s.y / 2);
+        ctx.moveTo(points[i].lines[j].s.x / ratio, points[i].lines[j].s.y / ratio);
         ctx.setGlobalAlpha(points[i].a);
         ctx.setStrokeStyle(points[i].c);
-        ctx.setLineWidth(points[i].l/2);
-        ctx.lineTo(points[i].lines[j].e.x / 2, points[i].lines[j].e.y / 2);
+        ctx.setLineWidth(points[i].l / ratio);
+        ctx.lineTo(points[i].lines[j].e.x / ratio, points[i].lines[j].e.y / ratio);
         ctx.stroke();
         ctx.draw(true);
       }
