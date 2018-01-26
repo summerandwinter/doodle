@@ -22,6 +22,9 @@ Page({
     this.lastTime = currTime + timeToCall;
     return id;
   },
+  cancelAnimationFrame: function (id) {
+    clearTimeout(id);
+  },
   onLoad: function () {
     const ctx = wx.createCanvasContext('myCanvas');
     var self = this;
@@ -38,11 +41,10 @@ Page({
         ctx.moveTo(points[i].lines[j].s.x / 2, points[i].lines[j].s.y / 2);
         ctx.setGlobalAlpha(points[i].a);
         ctx.setStrokeStyle(points[i].c);
-        ctx.setLineWidth(points[i].l);
+        ctx.setLineWidth(points[i].l/2);
         ctx.lineTo(points[i].lines[j].e.x / 2, points[i].lines[j].e.y / 2);
         ctx.stroke();
         ctx.draw(true);
-
       }
 
       //console.log(i + "-" + j);
