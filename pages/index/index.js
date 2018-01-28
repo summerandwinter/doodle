@@ -30,7 +30,7 @@ Page({
     var res = wx.getSystemInfoSync();
     var width = res.windowWidth;
     var height = res.windowHeight;
-    var ratio = 500 / width;
+    var ratio = 600 / width;
     console.log(width)
     console.log(height)
     this.setData({ width: width, height: height })
