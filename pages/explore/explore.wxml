@@ -1,0 +1,29 @@
+<import src="/template.wxml" />
+<!-- loadding start -->
+<template is="loader" data="{{loading}}" />
+<!-- loadding end -->
+<view class="container">
+
+  <view class="content">
+    <view class="item" wx:for="{{info.list}}" wx:key="{{id}}" bindtap="tap" data-id="{{item.id}}" ouchstart="touchstart" hidden="{{info.hidden}}">
+        <view class="word" wx:if="{{item.thumb}}">
+          <view class="item-cover" wx:if="{{item.thumb}}">
+            <image class="item-photo" src="{{item.thumb}}" background-size="cover"></image>
+          </view>
+          
+      </view>
+
+      
+
+
+    </view>
+    <view class="loadmore" hidden="{{!isLoading}}">
+      <view class="loadmore-loading" style=""></view>
+      <view class="loadmore-tips">正在加载</view>
+    </view>
+    <view class="loadmore loadmore-line" hidden="{{info.hasMore}}">
+      <view class="loadmore-tips">已经到底了</view>
+    </view>
+  </view>
+  <view class="slogan" hidden="{{slogan.hidden}}">{{slogan.word}}</view>
+</view>

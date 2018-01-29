@@ -1,0 +1,402 @@
+/**explore.wxss**/
+
+.nav {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+}
+
+.nav-item {
+  width: 120rpx;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: #fff;
+  font-size: 36rpx;
+}
+
+.tab {
+  color: #888;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.tab.selected {
+  color: #000;
+}
+
+.tab.selected::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6rpx;
+  background-color: #000;
+}
+
+.content.withNav {
+  top: 100rpx;
+}
+
+.content {
+  height: 100%;
+  background: #f4f4f4;
+}
+.item{
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.word,.movie,.music,.book{
+  background-color: #fff;
+}
+.item-meta{
+  font-family: PingFangSC-Thin,-apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  width: 640rpx;
+  font-size: 12px;
+  margin: 0 auto;
+}
+.meta-container{
+  width: 100%;
+  display: flex;
+  padding-bottom: 16px; 
+}
+.userinfo{
+  height: 16px;
+  flex: 1;
+  display: flex;
+}
+.avatar{
+  width:16px;
+  height:16px;
+  flex: 1;
+}
+.avatar image{
+  width:16px;
+  height:16px;
+}
+.nickname{
+  flex: 1;
+  width:100rpx;
+  color: #aaa;
+  padding-left: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 16px;
+}
+.time{
+  flex: 1;
+  text-align: right;
+  color: #aaa;
+}
+
+/** word **/
+.word {
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+.word.no-image{
+    justify-content: space-around;
+}
+.word .item-cover {
+  width: 750rpx;
+  height: 450rpx;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.word .item-cover image {
+  width: 100%;
+  height: 450rpx;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.word .item-content {
+  width: 640rpx;
+}
+
+.word .item-title {
+   font-family: PingFangSC-Regular,-apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  display: block;
+  color: #000;
+  font-size: 19px;
+  text-align: center;
+  line-height: 25px;
+  width: 598rpx;
+  margin: 76rpx auto 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.word .item-word {
+ font-family: PingFangSC-Thin, -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  display: block;
+  margin: 0rpx  auto 60rpx;
+  font-size: 15px;
+  line-height: 25px;
+  max-height: 100px;
+  text-align: left;
+  color: #8a8a8a;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  width: 640rpx;
+  overflow: hidden;
+}
+
+
+/** movie **/
+.movie {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.movie .item-cover {
+  width: 750rpx;
+  height: 450rpx;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.movie .item-cover image {
+  width: 100%;
+  height: 450rpx;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.movie .item-content {
+  width: 640rpx;
+  margin-bottom: 40px;
+}
+
+.movie .item-title {
+  font-family: PingFangSC-Thin, -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  display: block;
+  color: #8a8a8a;
+  font-size: 15px;
+  text-align: right;
+  line-height: 25px;
+  width: 640rpx;
+  margin: 50rpx auto 0;
+}
+
+.movie .item-word {
+ font-family: PingFangSC-Thin, -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  display: block;
+  margin: 76rpx  auto 20rpx;
+  font-size: 15px;
+  line-height: 25px;
+  max-height: 150px;
+  text-align: left;
+  color: #8a8a8a;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  width: 640rpx;
+  overflow: hidden;
+}
+
+
+
+
+/**book**/
+.book{
+  height: 100%;
+
+}
+.book .banner {
+  width: 750rpx;
+  margin: 0 auto;
+  height: 405rpx;
+  background: #000;
+}
+
+.book .info-conainter {
+  width: 640rpx;
+  margin: 160rpx auto 40px;
+}
+.book .cover-container {
+  position: absolute;
+  left: 275rpx;
+  top: 180rpx;
+  width: 210rpx;
+  height: 308rpx;
+}
+
+.book .cover {
+  width: 210rpx;
+  height: 308rpx;
+}
+
+
+
+
+
+.book .text {
+  font-family: PingFangSC-Thin, -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  display: block;
+  font-size: 15px;
+  line-height: 25px;
+  max-height: 100px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-align: left;
+  color: #8a8a8a;
+  word-wrap: break-word;
+  width: 640rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+.book .title {
+  font-family: PingFangSC-Thin, -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  display: block;
+  color: #8a8a8a;
+  font-size: 15px;
+  text-align: right;
+  line-height: 25px;
+  width: 640rpx;
+  margin: 50rpx auto 0;
+}
+/** music ***/
+
+.music .banner {
+  width: 750rpx;
+  height: 400rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.music .banner-inner {
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  left: -10%;
+  top: -10%;
+  background: #000;
+  background-position: center;
+  background-size: cover;
+  filter: blur(30px);
+}
+
+.music .banner-mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.music .cover-container {
+  position: absolute;
+  left: 100rpx;
+  top: 210rpx;
+  width: 300rpx;
+  height: 300rpx;
+  border: 10rpx #fff solid;
+}
+
+.music .cover {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.music .title {
+  position: absolute;
+  bottom: 5rpx;
+  left: 450rpx;
+  width: 280rpx;
+  display: block;
+  color: #fff;
+  font-size: 50rpx;
+  text-align: left;
+  line-height: 60rpx;
+  padding-top: 30rpx;
+}
+
+.music .author {
+  position: absolute;
+  left: 450rpx;
+  top: 5rpx;
+  width: 280rpx;
+  display: block;
+  text-align: left;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: #8a8a8a;
+}
+
+.music .content-body {
+  position: relative;
+  width: 750rpx;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.music .info-container {
+  width: 750rpx;
+  margin: 0 auto;
+  padding-top: 200rpx;
+  padding-bottom: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.music .lyric-contaner {
+  width: 640rpx;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.music .lyric-contaner .line {
+  font-family: PingFangSC-Thin, -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  overflow: hidden;
+  display: block;
+  font-size: 15px;
+  line-height: 25px;
+  max-height: 100px;
+  text-align: left;
+  color: #8a8a8a;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.music .editor {
+  width: 550rpx;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.music .text {
+  width: 90%;
+}
