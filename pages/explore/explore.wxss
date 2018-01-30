@@ -112,7 +112,7 @@
 }
 .word .item-cover {
   width: 750rpx;
-  height: 450rpx;
+  height: 750rpx;
   margin: 0;
   padding: 0;
   border: 0;
@@ -120,7 +120,7 @@
 
 .word .item-cover image {
   width: 100%;
-  height: 450rpx;
+  height: 750rpx;
   margin: 0;
   padding: 0;
   border: 0;

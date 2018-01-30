@@ -8,12 +8,18 @@ Page({
     points:[]
 
   },
+  path:[],
   lastTime: 0,
   isEmptyObject: function (obj) {
     for (var key in obj) {
       return false;//返回false，不为空对象
     }
     return true;//返回true，为空对象
+  },
+  requestAnimationFrame2: function (callback, element) {
+
+    var id = setTimeout(function () { callback(); }, 0);
+
   },
   requestAnimationFrame: function (callback, element) {
     var currTime = new Date().getTime();
@@ -36,7 +42,7 @@ Page({
     console.log(height)
     this.setData({ width: width, height: height })
     var self = this;
-    var points = this.data.points;
+    var points = this.path;
     ctx.setLineJoin('round');
     ctx.setLineCap('round');
     var i = 0;
@@ -64,52 +70,22 @@ Page({
       if (i < points.length && j < points[i].lines.length) self.requestAnimationFrame(loop);
     })();
   },
-  renderCanvas2: function () {
-    const ctx = wx.createCanvasContext('myCanvas');
-    var res = wx.getSystemInfoSync();
-    var width = res.windowWidth;
-    var height = res.windowHeight;
-    var ratio = 600 / width;
-    console.log(width)
-    console.log(height)
-    this.setData({ width: width, height: height })
-    var self = this;
-    var points = this.data.points;
-    ctx.setLineJoin('round');
-    ctx.setLineCap('round');
-    var i = 0;
-    var j = 0;
-    for (var i = 0; i < points[i].length;i++){
-      for(var j = 0; j <points[i].lines.length; j++){
-        if (!self.isEmptyObject(points[i].lines[j].e)) {
-          self.requestAnimationFrame(function(){
-            ctx.beginPath();
-            ctx.moveTo(points[i].lines[j].s.x / ratio, points[i].lines[j].s.y / ratio);
-            ctx.setGlobalAlpha(points[i].a);
-            ctx.setStrokeStyle(points[i].c);
-            ctx.setLineWidth(points[i].l / ratio);
-            ctx.lineTo(points[i].lines[j].e.x / ratio, points[i].lines[j].e.y / ratio);
-            ctx.stroke();
-            ctx.draw(true);
-          });
-          
-        }
-      }
-    }
-
-  },
   initData: function (id) {
     var that = this;
     var param = {};
     param['id'] = id;
     console.log(id);
+    wx.showLoading({
+      title: '加载中',
+    })
     AV.Cloud.run('detail', param).then(function (result) {
       console.log('获取首页数据');
       // 调用成功，得到成功的应答 data
-      console.log(result)
+      wx.hideLoading();
       if (result.code == 200) {
+        that.path = result.data.path;
         that.setData({
-          'points': result.data.path,
+          //'points': result.data.path,
           'loading.hidden': true,
           'content.hidden': false,
           'notfound.hidden': true

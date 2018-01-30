@@ -41,12 +41,16 @@ Page({
     this.loadData();
   },
   loadData: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
     var that = this;
     if (that.data.info.hasMore) {
       if (!that.data.isLoading && that.data.loading.hidden) {
         that.setData({ 'isLoading': true });
         var page = that.data.info.page;
-        var data = { 'page': page }
+        var data = { 'page': page };
+        wx.hideLoading();
         AV.Cloud.run('explore', data).then(function (result) {
           // 调用成功，得到成功的应答 data
           console.log(result)
@@ -111,6 +115,10 @@ Page({
   },
   onLoad: function () {
     console.log('生命周期:explore-load')
+    var res = wx.getSystemInfoSync();
+    var width = res.windowWidth;
+    var height = res.windowHeight;
+    this.setData({ width: width, height: height })
     var that = this;
     util.showShareMenu();
     //数据加载
