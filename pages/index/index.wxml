@@ -1,2 +1,3 @@
-<!--index.wxml-->
-<canvas canvas-id="myCanvas" />
+<canvas canvas-id="myCanvas" style="height: {{height}}px; width: {{width}}px;" disable-scroll="false" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" bindtouchcancel="touchcancel"/>
+
+
