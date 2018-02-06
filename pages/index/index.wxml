@@ -1,3 +1,11 @@
-<canvas canvas-id="myCanvas" style="height: {{height}}px; width: {{width}}px;" disable-scroll="false" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" bindtouchcancel="touchcancel"/>
+<canvas canvas-id="myCanvas" style="height: {{height}}px; width: {{width}}px;" disable-scroll="false" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" bindtouchcancel="touchcancel">
+<cover-view class="controller">
+<cover-image class="pencil" src='/image/pencil.png'></cover-image>
+<cover-image class="brush" src='/image/brush.png'></cover-image>
+<cover-image class="ball" src='/image/ball.png'></cover-image>
+<cover-image class="eraser" src='/image/eraser.png'></cover-image>
+</cover-view>
+</canvas>
+
 
 
